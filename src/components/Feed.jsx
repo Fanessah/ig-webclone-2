@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import {Button } from "antd"
+import Upload from './Upload'
 
 export default function Feed() {
     const [photoList, setPhotoList] = useState()
+    const [showUpload,setShowUpload] =useState(false)
     useEffect(() => {
         fetch("https://express-ts-fh.web.app/photos")
             .then(results => results.json())
@@ -18,7 +20,16 @@ export default function Feed() {
                 : <p> {photoList.length}</p>
             
             }
-            <Button className="fab" type="primary" shape="circle" size="large"></Button>
+            {showUpload ? <Upload setPhotoList={setPhotoList} setShowUpload={setShowUpload}/> :null}
+
+            <Button 
+            onClick={() => setShowUpload(true)} 
+            className="fab" 
+            type="primary" 
+            shape="circle" 
+            size="large">
+
+            </Button>
         </section>
 
     )
