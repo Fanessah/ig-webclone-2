@@ -1,19 +1,17 @@
-import Header from './components/Header'
-import Feed from './components/Feed'
+import Header from './components/Header';
+import Feed from './components/Feed';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
 
-      <Header/>
+      <Header />
       <div className="App Header">
-
-      
-      <Feed/>
+        <Feed />
       </div>
 
-    </div>
+    </main>
   );
 }
 
