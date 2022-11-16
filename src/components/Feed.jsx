@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import {Button } from "antd"
 
 export default function Feed() {
     const [photoList, setPhotoList] = useState()
@@ -15,7 +16,9 @@ export default function Feed() {
             {!photoList
                 ? <p>Loading...</p>
                 : <p> {photoList.length}</p>
+            
             }
+            <Button className="fab" type="primary" shape="circle" size="large"></Button>
         </section>
 
     )
