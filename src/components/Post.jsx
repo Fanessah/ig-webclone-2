@@ -2,7 +2,11 @@ import {Card,Avatar} from 'antd'
 export default function Post({post}) {
     return (
        <Card
-       style ={{ width:300}}
+       hoverable
+       actions={[
+        <button>Like</button>
+       ]}
+       style ={{ width: 300}}
        cover={
         <img alt={post.description} src={post.photo}/>
        }

@@ -27,7 +27,7 @@ export default function UploadModal({setShowUpload,setPhotoList}) {
         .catch(err => console.error(err))
 
         //2. figure out URL for that photo
-        const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-fh.appspot.com/o/photos%2F${filename}2022.10.31-BocaCode-42.jpg?alt=media`
+        const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-fh.appspot.com/o/photos%2F${filename}?alt=media`
         //3. put that UL in to new photo object
         let newPhotoObj = values
         newPhotoObj.photo = photoUrl
@@ -54,7 +54,6 @@ export default function UploadModal({setShowUpload,setPhotoList}) {
     }
     const closeModal = () => setShowUpload(false)
     return (
-        <>
         <Modal title="Upload Photo" open={true} footer={null} onCancel={closeModal} >
             <Form labelCol={{ span:8}} wrapperCol={{span:16}} onFinish={handleNewPhoto}>
                 <Form.Item label="User Name" name="username">
@@ -71,7 +70,7 @@ export default function UploadModal({setShowUpload,setPhotoList}) {
                 <Form.Item label="Description" name="description">
                     <Input.TextArea rows={4} required/>
                 </Form.Item>
-                <Form.Item wrapperCol={{offset:8,span:16}}>
+                <Form.Item wrapperCol={{offset: 8, span: 16}}>
                     <Button type="primary" htmlType="submit"> Save Photo</Button>
                     
                 </Form.Item>
@@ -79,6 +78,5 @@ export default function UploadModal({setShowUpload,setPhotoList}) {
 
             </Form>
         </Modal>
-        </>
     )
 }
