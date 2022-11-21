@@ -7,7 +7,7 @@ export default function Feed() {
     const [photoList, setPhotoList] = useState()
     const [showUpload, setShowUpload] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:5002/photos')
+        fetch('https://express-ts-fh.web.app/photos')
             .then(results => results.json())
             .then(data => setPhotoList(data))
             .catch(alert)

@@ -32,7 +32,7 @@ export default function UploadModal({setShowUpload,setPhotoList}) {
         let newPhotoObj = values
         newPhotoObj.photo = photoUrl
         //4.send a post request to API
-        fetch("http://localhost:5002/photos",{
+        fetch("https://express-ts-fh.web.app/photos",{
             method:'POST',
             headers:{'Content-type': 'application/json' },
             body:JSON.stringify(newPhotoObj)
